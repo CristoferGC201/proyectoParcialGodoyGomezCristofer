@@ -1,0 +1,101 @@
+<!-- 🎨 Estilos personalizados -->
+<style>
+  /* Barra de navegación superior */
+  .navbar {
+    background: linear-gradient(90deg, #069cf3, #0579c4); /* Gradiente */
+    color: rgb(0, 0, 0);
+    padding: 1rem;
+    font-size: 1.4rem;
+    font-weight: bold;
+    display: flex;              /* 🔹 Activamos flexbox */
+    justify-content: center;    /* 🔹 Centra horizontalmente */
+    align-items: center;        /* 🔹 Centra verticalmente */
+    letter-spacing: 1px;
+  }
+
+  /* Contenedor principal */
+  .container {
+    background: #f8f9fa;
+  }
+
+  /* Tarjeta */
+  .card {
+    border-radius: 15px;
+    border: none;
+    background: rgb(255, 255, 255);
+  }
+
+  /* Inputs */
+  .form-control {
+    border-radius: 10px;
+    border: 1px solid #ced4da;
+    transition: 0.3s;
+  }
+  .form-control:focus {
+    border-color: #069cf3;
+    box-shadow: 0 0 8px rgba(6, 156, 243, 0.3);
+  }
+
+  /* Botón */
+  .btn-primary {
+    background-color: #069cf3;
+    border: none;
+    border-radius: 10px;
+    padding: 0.6rem 1.2rem;
+    transition: 0.3s;
+  }
+  .btn-primary:hover {
+    background-color: #0579c4;
+    transform: scale(1.05);
+  }
+</style>
+
+<!-- Barra de navegación -->
+<nav class="navbar">
+  <p class="m-0">Inicio de sesión</p> <!-- 🔹 Texto centrado -->
+</nav>
+
+<!-- Contenido -->
+<div class="container vh-100 d-flex justify-content-center align-items-center">
+  <div class="card p-4 shadow" style="width: 22rem;">
+    <form #loginForm="ngForm" (ngSubmit)="validarCampos(loginForm)">
+      <!-- Usuario -->
+      <div class="mb-3">
+        <label for="campo1" class="form-label">Usuario</label>
+        <input
+          type="text"
+          id="campo1"
+          class="form-control mb-2"
+          placeholder="Ingresa tu usuario"
+          name="usuario"
+          [(ngModel)]="usuario"
+          required
+        />
+      </div>
+
+      <!-- Correo -->
+      <div class="mb-3">
+        <label for="campo2" class="form-label">Correo</label>
+        <input
+          type="email"
+          id="campo2"
+          class="form-control"
+          placeholder="correo@gmail.com"
+          name="correo"
+          [(ngModel)]="correo"
+          required
+        />
+      </div>
+
+      <!-- Validación -->
+      <div *ngIf="camposVacios" class="text-danger mt-2">
+        ⚠️ Campos vacíos. Por favor completa todos los campos.
+      </div>
+
+      <!-- Botón -->
+      <div class="d-flex justify-content-end pt-3">
+        <button type="submit" class="btn btn-primary">Iniciar sesión</button>
+      </div>
+    </form>
+  </div>
+</div>

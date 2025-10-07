@@ -1,0 +1,59 @@
+<div class="card p-2" (click)="seleccionDeTarjeta()" [class.seleccionada]="tarjetaSeleccionada">
+  <div class="row align-items-center">
+    <div class="col-3 text-center">
+      <img
+        [src]="perro.imagen"
+        alt="Foto de {{ perro.nombre }}"
+        class="img-fluid rounded-circle perfil-img"
+      />
+    </div>
+
+    <div class="col-9">
+      <div class="row">
+        <div class="col-6 fw-bold">Nombre</div>
+        <div class="col-6">{{ perro.nombre }}</div>
+      </div>
+      <div class="row">
+        <div class="col-6 fw-bold">Raza</div>
+        <div class="col-6">{{ perro.raza | uppercase }}</div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--<div #formulario class="card" [class.seccion-invisible]="!formularioVisible">
+    <div class="container mt-4">
+  <form>
+    <div class="mb-3">
+      <label for="campo1" class="form-label">Nombre</label>
+       <input type="text" class="form-control mb-2" [(ngModel)]="nombre" placeholder="Nombre del perro" name="nombre" />
+
+    </div>
+
+    <div class="mb-3">
+      <label for="campo2" class="form-label">Edad</label>
+      <input type="text" id="campo2" class="form-control" [(ngModel)]="edad" placeholder="Edad" name="edad" />
+
+    </div>
+
+    <div class="mb-3">
+      <label for="campo3" class="form-label">Raza</label>
+      <input type="text"  id="campo3" class="form-control" [(ngModel)]="raza" placeholder="RAza del perro" name="raza" />
+
+    </div>
+  </form>
+</div>
+
+<div class="row">
+    <div class="col-12 d-flex justify-content-end pt-3" (click)="flipFormulario()">
+        <button class="btn btn-primary">Guardar
+        </button>
+    </div>
+    <div class="row">
+    <div class="col-12 d-flex justify-content-end pt-3" (click)="flipFormulario()">
+        <button class="btn btn-primary">cancelar
+        </button>
+    </div>
+</div>
+
+</div>
+-->

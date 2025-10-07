@@ -1,0 +1,17 @@
+.perfil-img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border: 2px solid #ccc;
+}
+
+.card {
+  border-radius: 10px;
+  transition: box-shadow 0.3s ease, border 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.card:hover {
+  border-color: #001d72; /* azul al pasar el mouse */
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+}
